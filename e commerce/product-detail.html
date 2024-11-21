@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header id="header" class="bg-dark text-light">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-8 d-flex align-items-center">
+                    <h1 class="logo">
+                        <a href="#">
+                            <img src="images/Purple1 & Yellow Illustrative E-Commerce Online Shop Logo.png" alt="NexCommerce Logo" height="60">
+                        </a>
+                    </h1>
+                    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-md-4 text-right header__actions">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search..." aria-label="Search">
+                        <button id="search-button" class="btn btn-outline-light">Search</button>
+                    </div>
+                    <div class="header__cart d-inline-block ml-3">
+                        <a href="cart.html" id="cart-icon" class="btn btn-outline-light">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="header__cart-count" id="cart-count">0</span>
+                        </a>
+                    </div>
+                    <a href="login.html" class="btn btn-outline-light ml-2">Login</a>
+                    <a href="register.html" class="btn btn-outline-light ml-2">Register</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Details Section -->
+    <section id="product-details" class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img id="product-image" src="images/d1.jpg" class="img-fluid" alt="Product Image">
+            </div>
+            <div class="col-md-6">
+                <h1 id="product-title">Dress 1</h1>
+                <p id="product-price" class="h4">$99.99</p>
+                <p id="product-description">This is an elegant dress perfect for formal occasions. Made from high-quality fabric, it provides both comfort and style.</p>
+                <button class="btn btn-primary" id="add-to-cart-btn">Add to Cart</button>
+                <button class="btn btn-outline-light" id="buy-now-btn">Buy Now</button>
+
+                <!-- Expanded Details -->
+                <div class="product-details mt-4">
+                    <h5>Product Specifications:</h5>
+                    <ul id="product-specifications">
+                        <li>Material: Silk</li>
+                        <li>Color: Black</li>
+                        <li>Available Sizes: S, M, L</li>
+                    </ul>
+
+                    <h5>Customer Reviews:</h5>
+                    <div id="product-reviews">
+                        <p><strong>Jane Doe:</strong> "Absolutely loved this dress! The fit and fabric are perfect."</p>
+                        <p><strong>John Smith:</strong> "Good quality and comfortable. Highly recommended."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('product');
+
+        const productDetails = {
+            1: {
+                title: "Dress 1",
+                price: "$99.99",
+                description: "This is an elegant dress perfect for formal occasions. Made from high-quality fabric, it provides both comfort and style.",
+                image: "images/d1.jpg",
+                specifications: ["Material: Silk", "Color: Black", "Available Sizes: S, M, L"],
+                reviews: [
+                    { reviewer: "Jane Doe", comment: "Absolutely loved this dress! The fit and fabric are perfect." },
+                    { reviewer: "John Smith", comment: "Good quality and comfortable. Highly recommended." }
+                ]
+            },
+            2: {
+                title: "Dress 2",
+                price: "$79.99",
+                description: "This trendy dress is perfect for casual outings and parties. It is designed with vibrant colors and a comfortable fit.",
+                image: "images/d2.jpeg",
+                specifications: ["Material: Cotton", "Color: Red", "Available Sizes: M, L"],
+                reviews: [
+                    { reviewer: "Alice Green", comment: "Beautiful color and design! Will buy again." }
+                ]
+            },
+            3: {
+                title: "Dress 3",
+                price: "$69.99",
+                description: "This chic dress is ideal for both day and night wear. It has a stylish cut and is made from soft, breathable material.",
+                image: "images/d3.jpg",
+                specifications: ["Material: Polyester", "Color: Blue", "Available Sizes: XS, S, M"],
+                reviews: [
+                    { reviewer: "Sarah Blue", comment: "Very comfortable and trendy!" }
+                ]
+            },
+            4: {
+                title: "Dress 4",
+                price: "$40.99",
+                description: "This chic dress is ideal for both day and night wear. It has a stylish cut and is made from soft, breathable material.",
+                image: "images/d4.jpg",
+                specifications: ["Material: Polyester", "Color: Blue", "Available Sizes: XS, S, M"],
+                reviews: [
+                    { reviewer: "Sarah Blue", comment: "Very comfortable and trendy!" }
+                ]
+            },
+            5: {
+                title: "Dress 5",
+                price: "$80.99",
+                description: "This chic dress is ideal for both day and night wear. It has a stylish cut and is made from soft, breathable material.",
+                image: "images/d5.jpeg",
+                specifications: ["Material: Polyester", "Color: Blue", "Available Sizes: XS, S, M"],
+                reviews: [
+                    { reviewer: "Sarah Blue", comment: "Very comfortable and trendy!" }
+                ]
+            },
+            6: {
+                title: "Dress 6",
+                price: "$70.99",
+                description: "This chic dress is ideal for both day and night wear. It has a stylish cut and is made from soft, breathable material.",
+                image: "images/d7.jpeg",
+                specifications: ["Material: Polyester", "Color: Blue", "Available Sizes: XS, S, M"],
+                reviews: [
+                    { reviewer: "Sarah Blue", comment: "Very comfortable and trendy!" }
+                ]
+            },
+            
+        };
+
+        // Cart count
+        let cartCount = 0;
+
+        
+        function addToCart() {
+            cartCount++;
+            document.getElementById("cart-count").innerText = cartCount;
+            alert(`${document.getElementById("product-title").innerText} has been added to your cart.`);
+        }
+
+        
+        if (productDetails[productId]) {
+            const product = productDetails[productId];
+            document.getElementById("product-title").innerText = product.title;
+            document.getElementById("product-price").innerText = product.price;
+            document.getElementById("product-description").innerText = product.description;
+            document.getElementById("product-image").src = product.image;
+
+            
+            const specs = product.specifications.map(spec => `<li>${spec}</li>`).join('');
+            document.getElementById("product-specifications").innerHTML = specs;
+
+            
+            const reviews = product.reviews.map(review => `<p><strong>${review.reviewer}:</strong> "${review.comment}"</p>`).join('');
+            document.getElementById("product-reviews").innerHTML = reviews;
+        }
+
+        
+        document.getElementById("add-to-cart-btn").addEventListener("click", addToCart);
+        document.getElementById("buy-now-btn").addEventListener("click", function() {
+            alert("Proceeding to buy the product!");
+            window.location.href = "checkout.html"; // Change this to your checkout page
+        });
+    </script>
+    <script src="scripts.js"></script>
+</body>
+</html>

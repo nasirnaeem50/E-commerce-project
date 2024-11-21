@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - NexCommerce</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-8 d-flex align-items-center">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <img src="images/Purple1 & Yellow Illustrative E-Commerce Online Shop Logo.png" alt="NexCommerce Logo">
+                        </a>
+                    </h1>
+                    <nav class="navbar navbar-expand-lg navbar-black bg-black">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="shop.html">Shop</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about.html">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.html">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-md-4 text-right header__actions">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search..." aria-label="Search">
+                        <button id="search-button" class="btn btn-outline-light">Search</button>
+                    </div>
+                    <div class="header__cart d-inline-block ml-3">
+                        <a href="cart.html" id="cart-icon" class="btn btn-outline-light">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="header__cart-count">0</span>
+                        </a>
+                    </div>
+                    <a href="login.html" class="btn btn-outline-light ml-2">Login</a>
+                    <a href="register.html" class="btn btn-outline-light ml-2">Register</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Checkout Form -->
+<div class="checkout-form">
+    <h2>Checkout</h2>
+    <form>
+        <!-- Billing Information -->
+        <div class="billing-information">
+            <h3>Billing Information</h3>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="zip">Zip:</label>
+                <input type="text" id="zip" class="form-control" required>
+            </div>
+        </div>
+
+        <!-- Shipping Information -->
+        <div class="shipping-information">
+            <h3>Shipping Information</h3>
+            <div class="form-group">
+                <label for="shipping-name">Name:</label>
+                <input type="text" id="shipping-name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="shipping-address">Address:</label>
+                <input type="text" id="shipping-address" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="shipping-city">City:</label>
+                <input type="text" id="shipping-city" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="shipping-state">State:</label>
+                <input type="text" id="shipping-state" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="shipping-zip">Zip:</label>
+                <input type="text" id="shipping-zip" class="form-control" required>
+            </div>
+        </div>
+
+        <!-- Payment Information -->
+        <div class="payment-information">
+            <h3>Payment Information</h3>
+            <div class="form-group">
+                <label for="card-type">Card Type:</label>
+                <select id="card-type" class="form-control" required>
+                    <option value="">Select Card Type</option>
+                    <option value="visa">Visa</option>
+                    <option value="mastercard">Mastercard</option>
+                    <option value="amex">American Express</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="expiration-date">Expiration Date:</label>
+                <input type="text" id="expiration-date" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" class="form-control" required>
+            </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="order-summary">
+            <h3>Order Summary</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Order summary items will be displayed here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Place Order Button -->
+        <button type="submit" class="btn btn-primary">Place Order</button>
+    </form>
+</div>
+
+    <footer class="text-center mt-5">
+        <p>&copy; 2024 NexCommerce. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
